@@ -1,0 +1,119 @@
+public class RocketShip {
+    public static final int SIZE = 5;
+    public static void main(String[] args) {
+        topTriangle();
+        line();
+        upArrow();
+        downArrow();
+        line();
+        downArrow();
+        upArrow();
+        line();
+        topTriangle();
+    }
+    // code for trianlge at top and bottom of rocket ship
+    public static void topTriangle() {
+        for(int topRows = 1; topRows < SIZE * 2; topRows++){
+            for(int topSpaces = SIZE * 2; topSpaces > topRows; topSpaces--){
+                System.out.print(" ");
+            }
+            for(int topSlash = 1; topSlash <= topRows; topSlash++){
+                System.out.print("/");
+            }
+            System.out.print("**");
+            for(int topBSlash = 1; topBSlash <= topRows; topBSlash++){
+                System.out.print("\\");
+            }
+            System.out.println();
+        }
+    }
+    // code for line between square sections
+    public static void line(){
+        System.out.print("+");
+        for(int width = 0; width < SIZE * 2; width++){
+            System.out.print("=*");
+        }
+        System.out.print("+");
+        System.out.println();
+    }
+    public static void upArrow(){
+        for(int upRows = 1; upRows <= SIZE; upRows++){
+            System.out.print("|");
+            for(int upDots = SIZE; upDots > upRows; upDots--){
+                System.out.print(".");
+            }
+            for(int upTriangle = 1; upTriangle <= upRows; upTriangle++){
+                System.out.print("/\\");
+            }
+            for(int upDots = SIZE; upDots > upRows; upDots--){
+                System.out.print("..");
+            }
+            for(int upTriangle = 1; upTriangle <= upRows; upTriangle++){
+                System.out.print("/\\");
+            }
+            for(int upDots = SIZE; upDots > upRows; upDots--){
+                System.out.print(".");
+            }
+            System.out.print("|");
+            System.out.println();
+        }
+    }
+    public static void downArrow(){
+        for(int downRows = 1; downRows <= SIZE; downRows++){
+            System.out.print("|");
+            for(int downDots = 1; downDots < downRows; downDots++){
+                System.out.print(".");
+            }
+            for(int downTriangle = SIZE; downTriangle >= downRows; downTriangle--){
+                System.out.print("\\/");
+            }
+            for(int downDots = 1; downDots < downRows; downDots++){
+                System.out.print("..");
+            }
+            for(int downTriangle = SIZE; downTriangle >= downRows; downTriangle--){
+                System.out.print("\\/");
+            }
+            for(int downDots = 1; downDots < downRows; downDots++){
+                System.out.print(".");
+            }
+            System.out.print("|");
+            System.out.println();
+        }
+    }
+}
+
+
+/*
+ * spaces   slash    star    bSlash
+ * 9        1        2       1
+ * 8        2        2       2
+ * 7        3        2       3
+ * 6        4        2       4
+ * 5        5        2       5
+ * 4        6        2       6
+ * 3        7        2       7
+ * 2        8        2       8
+ * 1        9        2       9
+ * 
+ * 
+ * 
+ * 
+ * plus     equalStar   plus
+ * 1        10          1
+ *
+ *
+ *
+ * line     dots        slashBSlash     dots        slashBSlash     dots    line
+ * 1        4           1               8           1               4       1
+ * 1        3           2               6           2               3       1
+ * 1        2           3               4           3               2       1
+ * 1        1           4               2           4               1       1
+ * 1        0           5               0           5               0       1
+ * 
+ * 1        0           5               0           5               0       1
+ * 1        1           4               2           4               1       1
+ * 1        2           3               4           3               2       1
+ * 1        3           2               6           2               3       1
+ * 1        4           1               8           1               4       1
+ * 
+ */
