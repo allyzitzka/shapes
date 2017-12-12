@@ -1,0 +1,67 @@
+public class Staricase{
+    public static void main(String[] args) {
+        // other parts of body called within head method so
+        // only need to call head method once
+        head();
+    }
+    public static final int SCALE = 4;
+    public static void head() {
+        for(int line= 0; line < SCALE; line++){
+            // head
+            for(int spaces = (SCALE*5-3) - (line*5); spaces > 0; spaces--){
+               System.out.print(" ");
+            }
+            System.out.print("o");
+            System.out.print("  ");
+            for(int star = 0; star < 6; star++){
+               System.out.print("*");
+            }
+            for(int spaces = 0; spaces < line*5; spaces++){
+               System.out.print(" ");
+            }
+            System.out.println("*");
+            // arms
+            for(int spaces = (SCALE*5-4) - (line*5); spaces > 0; spaces--){
+                System.out.print(" ");
+            }
+            arms();
+            for(int spaces = 0; spaces < (line+1)*5; spaces++){
+               System.out.print(" ");
+            }
+            System.out.println("*");
+            // legs
+            for(int spaces = (SCALE*5-4) - (line*5); spaces > 0; spaces--){
+                System.out.print(" ");
+            }
+            legs();
+            for(int spaces = 0; spaces < (line+1)*5; spaces++){
+               System.out.print(" ");
+            }
+            System.out.println("*");
+            
+        }
+        bottom();
+    }
+    public static void bottom() {
+        // line at bottom
+        for(int stars = 7+SCALE*5; stars > 0; stars--){
+                System.out.print("*");
+            }
+        System.out.println();
+    }
+    public static void arms(){
+        System.out.print("/");
+        System.out.print("|");
+        System.out.print("\\");
+        System.out.print(" ");
+        System.out.print("*");
+    }
+    public static void legs(){
+        System.out.print("/");
+        System.out.print(" ");
+        System.out.print("\\");
+        System.out.print(" ");
+        System.out.print("*");
+    }
+    }
+    
