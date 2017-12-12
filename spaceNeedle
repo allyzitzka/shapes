@@ -1,0 +1,93 @@
+public class SpaceNeedle{
+    public static void main(String[] args) {
+        needle();
+        topSpace();
+        bottomSpace();
+        needle();
+        base();
+        topSpace();
+    }
+    public static final int SCALE = 8;
+    public static void needle() {
+        for(int line = 0; line < SCALE; line++){
+            for(int spaces = SCALE*3; spaces > 0; spaces--){
+                System.out.print(" ");
+            }
+            for(int lines = 1; lines > 0; lines--){
+                System.out.println("||");
+            }
+        }
+    }
+    public static void topSpace() {
+        for(int line = 0; line < SCALE; line++){
+            for(int spaces = SCALE*3-3-line*3; spaces > 0; spaces--){
+                System.out.print(" ");
+            }
+            System.out.print("__");
+            System.out.print("/");
+            for(int colon = 0 + 3*line; colon > 0; colon--){
+                System.out.print(":");
+            }
+            System.out.print("||");
+            for(int colon = 0 + 3*line; colon > 0; colon--){
+                System.out.print(":");
+            }
+            System.out.print("\\");
+            System.out.println("__");
+        }
+        System.out.print("|");
+        for(int quote = SCALE*6; quote > 0; quote--){
+            System.out.print("\"");
+        }
+        System.out.println("|");
+    }
+    public static void bottomSpace() {
+        for(int line = 0; line < SCALE; line++){
+            for(int space = 0; space < 0 + line; space++){
+                System.out.print("  ");
+            }
+            System.out.print("\\");
+            System.out.print("_");
+            for(int triangle = 0; triangle < (SCALE*3-1) - line * 2; triangle++){
+                System.out.print("/\\");
+            }
+            System.out.print("_");
+            System.out.println("/");
+        }
+    }
+    public static void base() {
+        for(int line = 0; line < SCALE*4; line++){
+            for(int spaces = 0; spaces < SCALE*3-3; spaces++){
+                System.out.print(" ");
+            }
+            for(int base = 0; base < 2; base++){
+                System.out.print("|");
+                System.out.print("%%");
+                System.out.print("|");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+/* space    lines
+ * 21       2
+ * 21       2
+ * 21       2
+ * 21       2
+ * 21       2
+ * 21       2
+ * 21       2
+ * 
+ * spaces   bSlash       underscore      colon       lines       colon       underscore      slash
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
+
+
+
